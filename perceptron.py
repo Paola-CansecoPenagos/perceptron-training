@@ -7,7 +7,7 @@ normaError = []
 ePesos = []
 
 def entrenamiento(archivo,epocas, eta):
-    global neEpocas, ePesos, normaError
+    global ePesos, normaError
     
     normaError = []  
     ePesos = [] 
@@ -36,7 +36,7 @@ def entrenamiento(archivo,epocas, eta):
     wFinales = ws
     return wIniciales, wFinales
 
-def graficarNormaError(epocas):
+def graficarNormaError():
     global normaError
     sns.set(style="whitegrid")
 

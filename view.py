@@ -99,8 +99,7 @@ class SeleccionarArchivoCSV(QWidget):
 
     def mostrarGraficaNormaError(self):
         if self.archivo_seleccionado:
-            epocas = int(self.entrada_epoca.text())
-            graficarNormaError(epocas)
+            graficarNormaError()
     
     def mostrarGraficaEvolucionPeso(self):
         if self.archivo_seleccionado:
