@@ -9,6 +9,9 @@ ePesos = []
 def entrenamiento(archivo,epocas, eta):
     global neEpocas, ePesos, normaError
     
+    normaError = []  
+    ePesos = [] 
+    
     data = pd.read_csv(archivo, delimiter= ';',  header=None)
     columnas = [f'x{i}' for i in range(1, len(data.columns))] + ['y']
     xs = len(columnas)-1
@@ -38,7 +41,8 @@ def graficarNormaError(epocas):
     sns.set(style="whitegrid")
 
     plt.figure(figsize=(9, 6))
-    sns.lineplot(x=range(1, epocas + 1), y=normaError, marker='o')
+    x_range = range(1, len(normaError) + 1)
+    sns.lineplot(x=x_range, y=normaError, marker='o')
     plt.title('Evolución de la norma del error |e| por época')
     plt.xlabel('Época')
     plt.ylabel('Norma del error |e|')
